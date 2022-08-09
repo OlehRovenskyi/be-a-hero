@@ -68,6 +68,9 @@ $ git checkout base-module
 
 # base crud
 $ git checkout base-crud
+
+# base validations
+$ git checkout validations
 ```
 
 

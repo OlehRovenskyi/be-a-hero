@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { User, USER_ROLE } from './user-management.model';
 import { v4 } from 'uuid';
 import { CreateUserDto } from './dtos/create-user.dto';
@@ -50,11 +50,19 @@ export class UserManagementService {
   }
 
   public getUserById(id: string): User {
-    return this.users.find((user) => user.id === id);
+    const foundUser = this.users.find((user) => user.id === id);
+
+    if (!foundUser) {
+      throw new NotFoundException(`User with ID ${id} not found`);
+    }
+
+    return foundUser;
   }
 
   public deleteUserById(id: string): void {
-    this.users = this.users.filter((user) => user.id !== id);
+    const userFound = this.getUserById(id);
+
+    this.users = this.users.filter((user) => user.id !== userFound.id);
   }
 
   public putUserById(id: string, userInfo: UpdateUserDto): User {
