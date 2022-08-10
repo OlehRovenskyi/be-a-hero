@@ -71,6 +71,9 @@ $ git checkout base-crud
 
 # base validations
 $ git checkout validations
+
+# integrate PostgreSQL
+$ git checkout postgresql
 ```
 
 

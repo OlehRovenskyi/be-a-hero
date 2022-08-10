@@ -1,4 +1,4 @@
-import { USER_ROLE } from '../user-management.model';
+import { USER_ROLE } from '../types/user-management.type';
 import {
   IsBoolean,
   IsEnum,
