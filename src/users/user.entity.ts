@@ -5,7 +5,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { USER_ROLE } from './types/user-management.type';
+import { USER_ROLE } from './types/users.type';
 
 @Entity()
 export class User {
