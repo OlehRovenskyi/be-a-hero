@@ -1,0 +1,20 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: PSQL
+  config:
+    APP_NAME: users-management-workshop
+build:
+  docker:
+    web: Dockerfile
+  config:
+    NODE_ENV: production
+run:
+  web: npm run start:prod
+#build:
+#  docker:
+#    web: Dockerfile
+#  config:
+#    NODE_ENV: production
+#  run:
+#    web: npm run start:prod
