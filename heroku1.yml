@@ -13,7 +13,3 @@
 #    web: Dockerfile
 #  config:
 #    NODE_ENV: production
-
-build:
-  run:
-    web: npm run start:prod
