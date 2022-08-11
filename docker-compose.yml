@@ -1,0 +1,38 @@
+version: '3.4'
+services:
+  users-dev:
+    build:
+      context: .
+      target: dev
+      dockerfile: ./Dockerfile
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    container_name: users-api
+    ports:
+      - "3000:${PORT}"
+      - "5858:5858"
+    volumes:
+      - ./src:/users-api/src
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    env_file:
+      - .env
+    restart: on-failure
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_DB: ${DB_NAME}
+      PG_DATA: /var/lib/postgresql/data
+    volumes:
+      - ${PWD}/postgres:/var/lib/postgresql/data
+    ports:
+      - "${DB_PORT}:5432"
+
+volumes:
+  docker-nest-postgres:
+
+

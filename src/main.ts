@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
+import { CONFIGURATION_SERVICE_TOKEN } from '@nestjs/config/dist/config.constants';
 
 console.log(process.env.NODE);
 
@@ -9,6 +10,8 @@ async function bootstrap() {
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
 
-  await app.listen(3000);
+  const configService = app.get(CONFIGURATION_SERVICE_TOKEN);
+  const port = configService.get('port');
+  await app.listen(port);
 }
 bootstrap();
