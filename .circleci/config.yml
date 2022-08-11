@@ -1,7 +1,29 @@
+jobs:
+  build_and_deploy:
+    docker:
+      - image: users
+    steps:
+      # For using docker commands.
+      - setup_remote_docker:
+          version: 19.03.13
+
+      # Build the docker image
+      - checkout
+      - run: docker build .
+
+      # Deploy to Heroku
+      - heroku/install
+      - run: heroku container:login
+      - heroku/push-docker-image:
+          process-types: web
+      - heroku/release-docker-image:
+         process-types: web
+
 version: 2.1
 orbs:
   heroku: circleci/heroku@1.2.6
 workflows:
   heroku_deploy:
     jobs:
-      - heroku/deploy-via-git
+      - build_and_deploy:
+#      - heroku/deploy-via-git
