@@ -74,6 +74,9 @@ $ git checkout validations
 
 # integrate PostgreSQL
 $ git checkout postgresql
+
+# integrate configuration
+$ git checkout configuration
 ```
 
 
