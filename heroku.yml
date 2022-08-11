@@ -4,6 +4,10 @@
 #      as: PSQL
 #  config:
 #    APP_NAME: users-management-workshop
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: DATABASE
 build:
   docker:
     web: Dockerfile
