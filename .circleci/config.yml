@@ -47,9 +47,6 @@ workflows:
       - heroku/deploy-via-git:
           requires:
             - build
-          filters:
-            branches:
-              only: main
 jobs:
   build:
     docker:
