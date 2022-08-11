@@ -13,8 +13,7 @@ build:
     web: Dockerfile
   config:
     NODE_ENV: production
-run:
-  web: npm run start:prod
+
 #build:
 #  docker:
 #    web: Dockerfile
