@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { ConfigModule } from '@nestjs/config';
 import configuration from '../config/configuration';
+import { DatabaseService } from './core/database/database.service';
 
 @Module({
   imports: [
@@ -11,15 +12,8 @@ import configuration from '../config/configuration';
       load: [configuration],
       isGlobal: true,
     }),
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'postgres',
-      database: 'user-management',
-      autoLoadEntities: true,
-      synchronize: true, // For Dev only
+    TypeOrmModule.forRootAsync({
+      useClass: DatabaseService,
     }),
     UsersModule,
   ],
