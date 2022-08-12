@@ -58,6 +58,34 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Branches
+
+```bash
+# init app
+$ git checkout master 
+
+# base module
+$ git checkout base-module
+
+# base crud
+$ git checkout base-crud
+
+# base validations
+$ git checkout validations
+
+# integrate PostgreSQL
+$ git checkout postgresql
+
+# integrate configuration
+$ git checkout configuration
+
+# integrate deploy
+$ git checkout deploy
+
+# integrate tests
+$ git checkout tests
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
