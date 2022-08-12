@@ -41,7 +41,9 @@ describe('UsersService', () => {
       updated_at: new Date(),
     };
 
-    jest.spyOn(repository, 'getById').mockImplementation(() => (Promise.resolve(user)));
+    jest
+      .spyOn(repository, 'getById')
+      .mockImplementation(() => Promise.resolve(user));
 
     const res = await service.getUserById('test');
     expect(res).toEqual(user);
