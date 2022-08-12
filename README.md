@@ -80,6 +80,9 @@ $ git checkout configuration
 
 # integrate deploy
 $ git checkout deploy
+
+# integrate tests
+$ git checkout tests
 ```
 
 
