@@ -1,4 +1,4 @@
-import { USER_ROLE } from '../user-management.model';
+import { USER_ROLE } from '../users.model';
 
 export class CreateUserDto {
   public name: string;

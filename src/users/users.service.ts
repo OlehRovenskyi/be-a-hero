@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { User, USER_ROLE } from './user-management.model';
+import { User, USER_ROLE } from './users.model';
 import { v4 } from 'uuid';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { GetUserFilterDto } from './dtos/get-user-filter.dto';
 
 @Injectable()
-export class UserManagementService {
+export class UsersService {
   private users: User[] = [
     {
       id: v4(),

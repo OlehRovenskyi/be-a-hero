@@ -1,12 +1,12 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
-import { UserManagementService } from './user-management.service';
-import { User } from './user-management.model';
+import { UsersService } from './users.service';
+import { User } from './users.model';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { GetUserFilterDto } from './dtos/get-user-filter.dto';
 
-@Controller('user-management')
-export class UserManagementController {
-  constructor(private userManagementService: UserManagementService) {}
+@Controller('users')
+export class UsersController {
+  constructor(private userManagementService: UsersService) {}
 
   // @Get()
   // async getAllUsers(): Promise<User[]> {
