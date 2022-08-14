@@ -67,19 +67,19 @@ $ git checkout master
 # base module
 $ git checkout base-module
 
-# base crud
+# base crud - mock crud command
 $ git checkout base-crud
 
-# base validations
+# base validations - validate request data 
 $ git checkout validations
 
 # integrate PostgreSQL
 $ git checkout postgresql
 
-# integrate configuration
+# integrate configuration - env
 $ git checkout configuration
 
-# integrate deploy
+# integrate deploy - set up CI cD
 $ git checkout deploy
 
 # integrate tests
