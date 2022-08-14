@@ -1,4 +1,4 @@
-import { USER_ROLE } from '../user-management.model';
+import { USER_ROLE } from '../users.model';
 import {
   IsBoolean,
   IsEnum,
@@ -11,7 +11,7 @@ import {
   MinLength,
 } from 'class-validator';
 
-export class UpdateUserDto {
+export class CreateUserDto {
   @MaxLength(100)
   @MinLength(3)
   @IsString()
