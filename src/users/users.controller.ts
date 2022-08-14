@@ -13,7 +13,7 @@ import { CreateUserDto } from './dtos/create-user.dto';
 import { GetUserFilterDto } from './dtos/get-user-filter.dto';
 import { User } from './user.entity';
 
-@Controller('user-management')
+@Controller('users')
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
